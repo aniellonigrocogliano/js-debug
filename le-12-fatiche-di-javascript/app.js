@@ -3,8 +3,8 @@ const array = [];
 
 input.addEventListener('keypress', function(event) {
 
-    if (event.code != 'Enter') return;
-    if (input.value == '')     return;
+    if (event.code == 'Enter') return;
+    if (input.value != '')     return;
 
     array.push(input.value);
 
