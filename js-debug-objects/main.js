@@ -56,7 +56,7 @@ const cars = [
         manufacturer: 'Seat',
         model: 'Ibiza',
         type: 'metano'
-    }
+    },
     {
         manufacturer: 'Audi',
         model: 'R8',
@@ -64,14 +64,19 @@ const cars = [
     },
 ];
 
-const gasolineCars = cars.filter( (auto) >= auto.type === 'benzina');
+const gasolineCars = cars.filter( (auto) => {
+    let car=auto.type.toLowerCase()
+    return car == 'benzina';
+});
 
 const dieselCars = cars.filter( (auto) => {
-    auto.type === 'diesel';
+    let car=auto.type.toLowerCase()
+   return car === 'diesel';
 });
 
 const otherCars = cars.filter( (auto) => {
-    return auto.type !== 'benzina' || auto.type !== 'diesel';
+    let car=auto.type.toLowerCase()
+    return car !== 'benzina' && car !== 'diesel';
 });
 
 console.log('Auto a benzina');
