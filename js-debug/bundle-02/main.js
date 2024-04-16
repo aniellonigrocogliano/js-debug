@@ -13,27 +13,34 @@
 // ESERCIZIO 1
 function checkAge() {
     const myAge = 32;
-    const message = '';
+    let message = '';
 
     if (myAge < 18) {
         message = `Sei troppo giovane! Hai ${myAge} anni!`;
     } else {
         message = 'Hai più di 18 anni!';
     }
+    return message; // aggiunto return
 }
-checkAge();
+ console.log(checkAge()); // aggiunto console.log
 
 // ESERCIZIO 2
 function printColorsNumber() {
     const colors = ['blue', 'red', 'yellow', 'green', 'black'];
-    console.log(`Nella mia palette ci sono ${colors.lenght} colori!`);
+    let string ="";
+    for (let i = 0; i < colors.length; i++) {
+      string += colors[i] + " ";
+         
+    }
+   console.log(`Nella mia palette ci sono ${string} colori!`); // mancava ciclo for e variabile d'appoggio
 }
 printColorsNumber();
 
 
 // ESERCIZIO 3
 function addNumbers() {
-    const userNumber = prompt('Inserisci un numero');
+    let userNumber = prompt('Inserisci un numero');
+    userNumber =  parseInt(userNumber); // bisognava trasformare stringfa in itero
     const total = userNumber + 12;
 
     console.log(`Il risultato finale è ${total}`);
@@ -42,14 +49,17 @@ addNumbers();
 
 
 // ESERCIZIO 4
+/**
+ * Description placeholder
+ */
 function checkAccess() {
     const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
     const userEmail = prompt('Inserisci il tuo indirizzo email');
 
-    let grantAccess = 'false';
+    let grantAccess = false // true e false erano salvate come stringhe e non come booleani
 
     if (addresses.includes(userEmail)) {
-        grantAccess = 'true';
+        grantAccess = true
     }
 
     if (grantAccess === true) {
@@ -65,17 +75,17 @@ checkAccess();
 function checkAccessImproved() {
     const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
 
-    const userEmail = prompt('Inserisci il tuo indirizzo email');
+ let userEmail = prompt('Inserisci il tuo indirizzo email');
 
-    let grantAccess = 'false';
+    let grantAccess = false;
 
     for (let i = 0; i < addresses.length; i++) {
         const email = addresses[i];
 
-        if (userEmail.length > 5) {
+        if (userEmail.length < i) {
 
             if (email === userEmail) {
-                grantAccess = 'true';
+                grantAccess = true;
 
             }
 
@@ -87,33 +97,4 @@ function checkAccessImproved() {
             console.log('Accesso negato!');
         }
     }
-    checkAccessImproved();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    checkAccessImproved()}
